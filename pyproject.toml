@@ -1,0 +1,35 @@
+[project]
+name = "utromfx"
+version = "0.1.0"
+description = "A high-performance policy compiler for Unitree G1 locomotion."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Mustafa", email = "your-email@example.com"}]
+dependencies = [
+    "torch>=2.2.0",
+    "numpy>=1.26.0",
+    "jinja2>=3.1.0", # For generating the C++ headers
+    "pybind11>=3.0.3",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "pybind11>=2.12.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "ruff>=0.3.0",
+]
+
+
+[tool.setuptools]
+# This tells setuptools that the "utromfx" folder in the root is the package
+packages = ["utromfx"]
+
+[tool.setuptools.package-dir]
+# Maps the package name to the directory
+"utromfx" = "utromfx"
+
+[project.scripts]
+utx = "utromfx.main:main"

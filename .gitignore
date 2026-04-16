@@ -1,0 +1,38 @@
+# --- Python Artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# --- C++ Build Artifacts ---
+build/
+bin/
+*.o
+*.so
+*.a
+*.out
+cmake-build-debug/
+cmake-build-release/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# --- UtromFX Specifics ---
+# We keep G1Controller.h as it is the "baked" result, 
+# but we ignore temporary parity check libraries
+utromfx_shadow.so
+shadow_header.h
+glue.cpp
+
+# --- Data & Models ---
+# Ignore large log files and temporary mock policies
+*.csv
+*.log
+mock_policy.pt
